@@ -17,7 +17,6 @@ import HeaderLinks from "./HeaderLinks";
 
 export function Header({ pages, onSidebarOpen, colorInvert = false }) {
   const theme = useTheme();
-  console.log(theme.palette);
   const { mode } = theme.palette;
   const linkColor = colorInvert ? "common.white" : "text.primary";
 
@@ -26,7 +25,6 @@ export function Header({ pages, onSidebarOpen, colorInvert = false }) {
   const [activeLink, setActiveLink] = useState("");
   const { openModal, setOpenModal, currentColor, setCurrentColor } =
     useStateContext();
-  console.log(currentColor);
   const handleClick = (event, popoverId) => {
     setAnchorEl(event.target);
     setOpenedPopoverId(popoverId);
@@ -118,7 +116,6 @@ export function Header({ pages, onSidebarOpen, colorInvert = false }) {
         <Box display={"flex"} justifyContent={"flex-end"} alignItems={"center"}>
           <Link to="/signin" style={{ textDecoration: "none" }}>
             <Button
-              component="a"
               sx={{
                 marginRight: "5px",
                 textTransform: "none",

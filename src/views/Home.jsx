@@ -1,5 +1,4 @@
 import React from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import pic1 from "../assets/img/pic1.png";
 import Box from "@mui/material/Box";
@@ -88,7 +87,6 @@ function Home() {
     defaultMatches: true,
   });
   const { openModal, setOpenModal, mode, currentColor } = useStateContext();
-  console.log(currentColor);
   return (
     <Box
       sx={{
@@ -144,7 +142,6 @@ function Home() {
             >
               <Link to="/addbookings" style={{ textDecoration: "none" }}>
                 <Button
-                  component="a"
                   sx={{
                     marginRight: "5px",
                     textTransform: "none",

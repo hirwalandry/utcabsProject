@@ -14,7 +14,6 @@ export const ContextProvider = ({ children }) => {
   const [mode, setMode] = useState("light")
   const [currentColor, setCurrentColor] = useState("primary");
   const [mountedComponent, setMountedComponent] = useState(false);
-  console.log(currentColor);
  
   // const colorMode = (e) => {
   //   useMemo(

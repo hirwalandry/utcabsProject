@@ -57,7 +57,6 @@ function App() {
     setThemeSettings,
     currentColor,
   } = useStateContext();
-  console.log(currentColor);
   const loaded = useRef(false);
   if (typeof window !== "undefined" && !loaded.current && !window.google) {
     if (!document.querySelector("#google-maps")) {
@@ -81,7 +80,6 @@ function App() {
       easing: "ease-in-out",
     });
   }, []);
-  console.log(currentColor);
   return (
     // <Provider store={store}>
     //   <FirebaseProvider config={FirebaseConfig} appcat={AppCat}>
