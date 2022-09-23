@@ -63,12 +63,7 @@ export function Header({ pages, onSidebarOpen, colorInvert = false }) {
         justifyContent={"flex-end"}
         alignItems={"center"}
       >
-        <Box
-          display={"flex"}
-
-          justifyContent={"flex-end"}
-          alignItems={"center"}
-        >
+        <Box display={"flex"} justifyContent={"flex-end"} alignItems={"center"}>
           {pages.map((p, i) => (
             <HeaderLinks
               fontWeight={hasActiveLink() ? 700 : 400}
@@ -148,6 +143,11 @@ export function Header({ pages, onSidebarOpen, colorInvert = false }) {
             component="a"
             sx={{
               textTransform: "none",
+              color: "white",
+              background: currentColor,
+              "&:hover": {
+                background: currentColor,
+              },
             }}
             color={currentColor}
             target="blank"

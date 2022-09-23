@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import FormController from "../components/common/FormController";
 import FormModal from "../components/common/FormModal";
+import { useStateContext } from "../contexts/ContextProvider";
 import {
   Grid,
   Paper,
@@ -47,6 +48,7 @@ const validationSchema = Yup.object({
 function LoginPage(props) {
   // const { state } = useLocation();
   const [errors, setErrors] = useState({});
+  const { currentColor } = useStateContext();
 
   const onSubmit = async (values) => {
     // try {
@@ -81,55 +83,63 @@ function LoginPage(props) {
         </Avatar>
       </Box>
       {/* Formik callback method that takes formik as argument and perfom some login on Form componet */}
-<Box marginBottom={2}>
-      {/* Form */}
-      <form onSubmit={formik.handleSubmit}>
-        {/* FormController Component takes attribute to specify the specified input */}
+      <Box marginBottom={2}>
+        {/* Form */}
+        <form onSubmit={formik.handleSubmit}>
+          {/* FormController Component takes attribute to specify the specified input */}
 
-        <FormController
-          control="select"
-          type="text"
-          label="Select Country"
-          options={countries}
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          value={formik.initialValues.country}
-          className="form-control"
-          errors={
-            (formik.touched.email && formik.errors.email) ||
-            (formik.touched.email && errors.email)
-          }
-        />
-        <FormController
-          control="input"
-          type="email"
-          label="Mobile Number Or Email"
-          id="email"
-          name="email"
-          onBlur={formik.handleBlur}
-          onChange={formik.handleChange}
-          value={formik.values.email}
-          className="form-control"
-          errors={
-            (formik.touched.email && formik.errors.email) ||
-            (formik.touched.email && errors.email)
-          }
-        />
-        <FormControlLabel
-          control={<Checkbox name="checkedB" color="primary" />}
-          label="Remember me"
-        />
-        <Button
-          type="submit"
-          color="primary"
-          variant="contained"
-          disabled={!formik.isValid || formik.isSubmitting}
-          style={{ btnstyle, textTransform: "none", marginTop: "2px" }}
-          fullWidth
-        >
-          Sign in
-        </Button>
-      </form>
+          <FormController
+            control="select"
+            type="text"
+            label="Select Country"
+            options={countries}
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.initialValues.country}
+            className="form-control"
+            errors={
+              (formik.touched.email && formik.errors.email) ||
+              (formik.touched.email && errors.email)
+            }
+            fullWidth
+          />
+          <FormController
+            control="input"
+            type="email"
+            label="Mobile Number Or Email"
+            id="email"
+            name="email"
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.email}
+            className="form-control"
+            errors={
+              (formik.touched.email && formik.errors.email) ||
+              (formik.touched.email && errors.email)
+            }
+          />
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Remember me"
+          />
+          <Button
+            type="submit"
+            color={currentColor}
+            sx={{
+              background: currentColor,
+              color: "white",
+              "&:hover": {
+                background: currentColor,
+              },
+            }}
+            variant="contained"
+            disabled={!formik.isValid || formik.isSubmitting}
+            style={{ btnstyle, textTransform: "none", marginTop: "2px" }}
+            fullWidth
+          >
+            Sign in
+          </Button>
+        </form>
       </Box>
       <Typography>
         <Link href="#">Forgot password ?</Link>

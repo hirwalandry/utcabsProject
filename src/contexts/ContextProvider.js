@@ -53,10 +53,10 @@ export const ContextProvider = ({ children }) => {
        const localTheme = window.localStorage.getItem("themeMode");
        const localColor = window.localStorage.getItem("colorsMode");
        localTheme ? setMode(localTheme) : colorMode.toggleColorMode("light");
-       localColor ? setColor(localColor) : setCurrentColor("primary");
+       localColor ? setColor(localColor) : setCurrentColor("red");
      } catch {
        colorMode.toggleColorMode("light");
-       setCurrentColor("primary");
+       setCurrentColor("red");
      }
 
      setMountedComponent(true);

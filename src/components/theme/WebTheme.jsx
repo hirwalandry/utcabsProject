@@ -1,9 +1,5 @@
 export const themeColors = [
   {
-    name: "blue-theme",
-    color: "primary",
-  },
-  {
     name: "green-theme",
     color: "green",
   },

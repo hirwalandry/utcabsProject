@@ -10,13 +10,14 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Container from "../components/container/Container";
-import {useStateContext} from "../contexts/ContextProvider"
-import taxCar1 from "../assets/img/taxCar2.jpg"
-import taxCar2 from "../assets/img/taxCar3.jpg"
-import exclussiveCar1 from "../assets/img/exclusiveCar1.jpg"
-import exclussiveCar2 from "../assets/img/exclusiveCar2.jpg"
-import comfortCar1 from "../assets/img/comfortCar1.jpg"
-import comfortCar2 from "../assets/img/comfortCar2.jpg"
+import { useStateContext } from "../contexts/ContextProvider";
+import taxCar1 from "../assets/img/taxCar2.jpg";
+import taxCar2 from "../assets/img/taxCar3.jpg";
+import exclussiveCar1 from "../assets/img/exclusiveCar1.jpg";
+import exclussiveCar2 from "../assets/img/exclusiveCar2.jpg";
+import comfortCar1 from "../assets/img/comfortCar1.jpg";
+import comfortCar2 from "../assets/img/comfortCar2.jpg";
+import { ImageList, ImageListItem } from "@mui/material";
 
 const dataSlider = [
   {
@@ -27,23 +28,24 @@ const dataSlider = [
     id: 2,
     image: taxCar2,
   },
-,
-{
-  id: 3,
-  image: exclussiveCar1
-},
-{
-  id: 4,
-  image: exclussiveCar2
-},
-{
-  id: 5,
-  image: comfortCar1
-},
-{
-  id: 6,
-  image: comfortCar2
-}];
+  ,
+  {
+    id: 3,
+    image: exclussiveCar1,
+  },
+  {
+    id: 4,
+    image: exclussiveCar2,
+  },
+  {
+    id: 5,
+    image: comfortCar1,
+  },
+  {
+    id: 6,
+    image: comfortCar2,
+  },
+];
 const mock = [
   {
     title: 300,
@@ -80,25 +82,25 @@ function CustomerCare(props) {
     setViewPortEntered(isVisible);
   };
 
-    const nextSlide = () => {
-      if (slideIndex !== dataSlider.length) {
-        setSlideIndex(slideIndex + 1);
-      } else if (slideIndex === dataSlider.length) {
-        setSlideIndex(1);
-      }
-    };
+  const nextSlide = () => {
+    if (slideIndex !== dataSlider.length) {
+      setSlideIndex(slideIndex + 1);
+    } else if (slideIndex === dataSlider.length) {
+      setSlideIndex(1);
+    }
+  };
 
-    const prevSlide = () => {
-      if (slideIndex !== 1) {
-        setSlideIndex(slideIndex - 1);
-      } else if (slideIndex === 1) {
-        setSlideIndex(dataSlider.length);
-      }
-    };
+  const prevSlide = () => {
+    if (slideIndex !== 1) {
+      setSlideIndex(slideIndex - 1);
+    } else if (slideIndex === 1) {
+      setSlideIndex(dataSlider.length);
+    }
+  };
 
-    const moveDot = (index) => {
-      setSlideIndex(index);
-    };
+  const moveDot = (index) => {
+    setSlideIndex(index);
+  };
   return (
     <Box
       sx={{
@@ -108,7 +110,7 @@ function CustomerCare(props) {
     >
       <Container>
         <Box marginTop={8}>
-          <Grid
+           <Grid
             container
             spacing={4}
             direction={isMd ? "row" : "column-reverse"}
@@ -120,7 +122,7 @@ function CustomerCare(props) {
                   variant={"h4"}
                   gutterBottom
                 >
-                  The powerful and flexible theme for all kinds of businesses
+                  The powerful and flexible car for all kinds of transport
                 </Typography>
                 <Typography
                   variant={"h6"}
@@ -133,7 +135,7 @@ function CustomerCare(props) {
                   users.
                 </Typography>
               </Box>
-              <Grid container spacing={2}>
+              <Grid container spacing={2}> 
                 {mock.map((item, i) => (
                   <Grid key={i} item xs={12} md={4} data-aos={"fade-up"}>
                     <Typography variant="h4" color={"primary"} gutterBottom>
@@ -169,22 +171,33 @@ function CustomerCare(props) {
                 display: { xs: "none", md: "flex" },
               }}
             >
-              
               <Box
                 component={Card}
                 boxShadow={4}
                 height={1}
                 width={1}
-                data-aos={"fade-up"}
+                data-aos="fade-up"
               >
-                {dataSlider.map((item, index) => <Box
+                <Box
                   component={CardMedia}
                   height={1}
                   width={1}
                   minHeight={300}
-                  
-                />)}
-                
+                  // image={exclussiveCar1}
+                >
+                  <ImageList variant="masonry" cols={3} gap={8}>
+                    {dataSlider.map((item, index) => (
+                      <ImageListItem key={index}>
+                        <img
+                          src={`${item.image}?w=248&fit=crop&auto=format`}
+                          srcSet={`${item.image}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                          alt={item.id}
+                          loading="lazy"
+                        />
+                      </ImageListItem>
+                    ))}
+                  </ImageList>
+                </Box>
               </Box>
             </Grid>
           </Grid>

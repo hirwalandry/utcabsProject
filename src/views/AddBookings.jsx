@@ -3,6 +3,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import FormController from "../components/common/FormController";
 import FormModal from "../components/common/FormModal";
+import { useStateContext } from "../contexts/ContextProvider";
 import {
   Grid,
   Paper,
@@ -52,6 +53,7 @@ const validationSchema = Yup.object({
 function AddBookings(props) {
   // const { state } = useLocation();
   const [errors, setErrors] = useState({});
+  const { currentColor } = useStateContext();
 
   const onSubmit = async (values) => {};
   const btnstyle = { margin: "8px 0" };
@@ -139,7 +141,14 @@ function AddBookings(props) {
           />
           <Button
             type="submit"
-            color="primary"
+            color={currentColor}
+            sx={{
+              background: currentColor,
+              color: "white",
+              "&:hover": {
+                background: currentColor,
+              },
+            }}
             variant="contained"
             disabled={!formik.isValid || formik.isSubmitting}
             style={{ btnstyle, textTransform: "none", marginTop: "2px" }}

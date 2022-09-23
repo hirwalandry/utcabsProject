@@ -1,7 +1,7 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import pic1 from "../assets/img/pic1.png"
+import pic1 from "../assets/img/pic1.png";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
@@ -88,6 +88,7 @@ function Home() {
     defaultMatches: true,
   });
   const { openModal, setOpenModal, mode, currentColor } = useStateContext();
+  console.log(currentColor);
   return (
     <Box
       sx={{
@@ -101,8 +102,11 @@ function Home() {
       id="home"
     >
       <Box paddingY={{ xs: 0, sm: "4rem", md: "8rem" }}>
-        <Container>
-          <Box maxWidth={{ xs: 1, sm: "50%" }}>
+        <Container
+          display={"flex"}
+          flexDirection={{ xs: "column", sm: "column", md: "row" }}
+        >
+          <Box maxWidth={{ xs: 1, sm: "100%" }} width={{ sm: 1 }}>
             <Typography
               variant="h2"
               color="text.primary"
@@ -118,7 +122,7 @@ function Home() {
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
-                    .typeString("Turn your ideas into Reality!")
+                    .typeString("Turn your vultureing into easiest one!")
                     .start();
                 }}
               />
@@ -144,12 +148,12 @@ function Home() {
                   sx={{
                     marginRight: "5px",
                     textTransform: "none",
-                    // color: currentColor,
-                    // borderColor: currentColor,
-                    // "&:hover": {
-                    //   borderColor: currentColor,
-                    //   boxShadow: "0 12px 15px rgb(140 152 164 / 10%)",
-                    // },
+                    color: currentColor,
+                    borderColor: currentColor,
+                    "&:hover": {
+                      borderColor: currentColor,
+                      boxShadow: "0 12px 15px rgb(140 152 164 / 10%)",
+                    },
                   }}
                   color={currentColor}
                   onClick={() => setOpenModal(true)}
@@ -171,6 +175,11 @@ function Home() {
                   sx={{
                     textTransform: "none",
                     color: "white",
+                    background: currentColor,
+                    "&:hover": {
+                      background: currentColor,
+                    
+                    },
                   }}
                   color={currentColor}
                   target="blank"
@@ -183,39 +192,25 @@ function Home() {
               </Box>
             </Box>
           </Box>
-        </Container>
-        <Box
-          sx={{
-            display: { xs: "none", sm: "none", md: "none", lg: "block" },
-          }}
-        >
+
           <Box
-            display={"flex"}
-            width={"50rem"}
-            left={"50%"}
-            top={0}
-            position={"absolute"}
-           
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-       
-              <Box  marginY={10} marginX={1}>
-             
-                    <Box
-                      component={"img"}
-                      effect="blur"
-                      src={
-                        pic1
-                      }
-                
-                      height={1}
-                      width={1}
-                      maxWidth={700}
-                    />
-                  </Box>
-        
-    
+            <Box marginX={1}>
+              <Box
+                component={"img"}
+                src={pic1}
+                height={1}
+                width={1}
+                maxWidth={800}
+              />
+            </Box>
           </Box>
-        </Box>
+        </Container>
       </Box>
       <Box
         component={"svg"}

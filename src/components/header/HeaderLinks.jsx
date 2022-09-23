@@ -193,7 +193,7 @@ import { useStateContext } from "../../contexts/ContextProvider";
 
 function HeaderLinks({ fontWeight, icons, title, href, colorInvert = false }) {
   const theme = useTheme();
-  const { mode } = useStateContext();
+  const { mode, currentColor } = useStateContext();
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [openedPopoverId, setOpenedPopoverId] = useState(null);
