@@ -36,6 +36,7 @@
     "react-router-dom": "^6.4.0",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
+    "react-typewriter-effect": "^1.1.0",
     "react-visibility-sensor": "^5.1.1",
     "yup": "^0.32.11"
   },
