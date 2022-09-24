@@ -22,8 +22,6 @@ import "aos/dist/aos.css";
 import { GoogleMapApiConfig } from "./config/GoogleMapApiConfig";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import { AppCat } from "./config/AppCat";
-import Page from "./components/Page";
 import { LoginPage, AddBookings } from "./views";
 i18n.use(initReactI18next).init({
   resources: {},
@@ -51,12 +49,8 @@ var hist = createBrowserHistory();
 
 function App() {
   const theme = useTheme();
-  const {
-    openModal,
-    themeSettings,
-    setThemeSettings,
-    currentColor,
-  } = useStateContext();
+  const { openModal, themeSettings, setThemeSettings, currentColor } =
+    useStateContext();
   const loaded = useRef(false);
   if (typeof window !== "undefined" && !loaded.current && !window.google) {
     if (!document.querySelector("#google-maps")) {
