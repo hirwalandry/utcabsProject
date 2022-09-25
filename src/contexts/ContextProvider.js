@@ -55,15 +55,11 @@ export const ContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    try {
       const localTheme = window.localStorage.getItem("themeMode");
       const localColor = window.localStorage.getItem("colorsMode");
       localTheme ? setMode(localTheme) : colorMode.toggleColorMode("light");
       localColor ? setColor(localColor) : setCurrentColor("red");
-    } catch {
-      colorMode.toggleColorMode("light");
-      setCurrentColor("red");
-    }
+  
 
     setMountedComponent(true);
     // eslint-disable-next-line

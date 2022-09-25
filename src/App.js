@@ -1,13 +1,12 @@
 import React, {  useEffect } from "react";
-// import { createBrowserHistory } from "history";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import { MainComponent } from "./views";
-// import appstore from "./assets/img/appstore.png";
-// import playstore from "./assets/img/playstore.png";
-// import { Box, IconButton, Tooltip } from "@mui/material";
-// import SettingsIcon from "@mui/icons-material/Settings";
-// import { useStateContext } from "./contexts/ContextProvider";
-// import { ThemeSettings } from "./components";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { MainComponent } from "./views";
+import appstore from "./assets/img/appstore.png";
+import playstore from "./assets/img/playstore.png";
+import { Box, IconButton, Tooltip } from "@mui/material";
+import SettingsIcon from "@mui/icons-material/Settings";
+import { useStateContext } from "./contexts/ContextProvider";
+import { ThemeSettings } from "./components";
 import "./App.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -19,7 +18,7 @@ import "aos/dist/aos.css";
 // import { GoogleMapApiConfig } from "./config/GoogleMapApiConfig";
 // import i18n from "i18next";
 // import { initReactI18next } from "react-i18next";
-// import { LoginPage, AddBookings } from "./views";
+import { LoginPage, AddBookings } from "./views";
 // i18n.use(initReactI18next).init({
 //   resources: {},
 //   fallbackLng: "en",
@@ -45,8 +44,8 @@ import "aos/dist/aos.css";
 // var hist = createBrowserHistory();
 
 function App() {
-  // const { openModal, themeSettings, setThemeSettings, currentColor } =
-  //   useStateContext();
+  const { openModal, themeSettings, setThemeSettings, currentColor } =
+    useStateContext();
   // const loaded = useRef(false);
   // if (typeof window !== "undefined" && !loaded.current && !window.google) {
   //   if (!document.querySelector("#google-maps")) {
@@ -75,9 +74,8 @@ function App() {
     //   <FirebaseProvider config={FirebaseConfig} appcat={AppCat}>
     //     <AuthLoading>
     <>
-      {/* <Box position={"fixed"} left={20} bottom={20} style={{ zIndex: "1000" }}> */}
-      {/* <TooltipComponent content="Settings" position="Top"> */}
-      {/* <Box
+      <Box position={"fixed"} left={20} bottom={20} style={{ zIndex: "1000" }}>
+      <Box
           justifyContent="center"
           alignItems="center"
           xs={12}
@@ -109,11 +107,10 @@ function App() {
             <SettingsIcon style={{ color: "white" }} />
           </IconButton>
         </Tooltip>
-      </Box> */}
-      {/* {themeSettings && <ThemeSettings />} */}
-
-      {/* <Router>
-        <Routes history={hist}>
+      </Box> 
+      {themeSettings && <ThemeSettings />}
+ <Router>
+        <Routes>
           <Route path="/" element={<MainComponent />}>
             <Route path="signin" element={<LoginPage />} />
             <Route path="addbookings" element={<AddBookings />} />
@@ -125,8 +122,7 @@ function App() {
             <Route path="/addbookings" element={<AddBookings />} />
           </Routes>
         ) : null}
-      </Router> */}
-      <h1>Hello world</h1>
+      </Router>
     </>
   );
 }
