@@ -5,19 +5,12 @@ import FormController from "../components/common/FormController";
 import FormModal from "../components/common/FormModal";
 import { useStateContext } from "../contexts/ContextProvider";
 import {
-  Grid,
-  Paper,
-  Avatar,
-  TextField,
   Checkbox,
   Button,
-  Typography,
-  Link,
   FormControlLabel,
   Box,
 } from "@mui/material";
 
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 // import { loginUser } from "../services/authService";
 
 const countries = [
@@ -52,7 +45,7 @@ const validationSchema = Yup.object({
 
 function AddBookings(props) {
   // const { state } = useLocation();
-  const [errors, setErrors] = useState({});
+  const [errors,] = useState({});
   const { currentColor } = useStateContext();
 
   const onSubmit = async (values) => {};

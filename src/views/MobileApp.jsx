@@ -1,13 +1,11 @@
 import React from "react";
-import { useTheme } from "@mui/material/styles";
-import { Box, Grid, Card, CardMedia, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import mobilephoto from "../assets/img/triobanner.png";
 import appstore from "../assets/img/appstore.png";
 import playstore from "../assets/img/playstore.png";
 import Container from "../components/container/Container";
 
 function MobileApp(props) {
-  const theme = useTheme();
   return (
     <Box
       sx={{

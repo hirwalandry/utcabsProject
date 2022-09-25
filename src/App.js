@@ -1,14 +1,11 @@
-import React, { useRef, useEffect, useMemo } from "react";
+import React, { useRef, useEffect } from "react";
 import { createBrowserHistory } from "history";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { alpha, useTheme } from "@mui/material/styles";
-import { LandingPage, MainComponent } from "./views";
+import { MainComponent } from "./views";
 import appstore from "./assets/img/appstore.png";
 import playstore from "./assets/img/playstore.png";
-import { Container } from "./components";
-import { Box, IconButton, Tooltip, Button } from "@mui/material";
+import { Box, IconButton, Tooltip } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useStateContext } from "./contexts/ContextProvider";
 import { ThemeSettings } from "./components";
 import "./App.css";
@@ -48,7 +45,6 @@ function loadScript(src, position, id) {
 var hist = createBrowserHistory();
 
 function App() {
-  const theme = useTheme();
   const { openModal, themeSettings, setThemeSettings, currentColor } =
     useStateContext();
   const loaded = useRef(false);

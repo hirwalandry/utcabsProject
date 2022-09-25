@@ -5,10 +5,7 @@ import FormController from "../components/common/FormController";
 import FormModal from "../components/common/FormModal";
 import { useStateContext } from "../contexts/ContextProvider";
 import {
-  Grid,
-  Paper,
   Avatar,
-  TextField,
   Checkbox,
   Button,
   Typography,
@@ -47,7 +44,7 @@ const validationSchema = Yup.object({
 
 function LoginPage(props) {
   // const { state } = useLocation();
-  const [errors, setErrors] = useState({});
+  const [errors] = useState({});
   const { currentColor } = useStateContext();
 
   const onSubmit = async (values) => {

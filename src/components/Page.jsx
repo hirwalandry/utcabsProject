@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React  from "react";
 import PropTypes from "prop-types";
 import { ThemeProvider } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import CssBaseline from "@mui/material/CssBaseline";
 import getTheme from "../theme";
 import {useStateContext} from "../contexts/ContextProvider"
-import AOS from "aos";
 
 function Page({ children }) {
     const { mode } = useStateContext();

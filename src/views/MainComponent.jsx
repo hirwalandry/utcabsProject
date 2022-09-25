@@ -5,7 +5,6 @@ import {
   CustomerCare,
   Services,
   ContactUs,
-  LoginPage,
   LandingPage
 } from "./";
 import { alpha, useTheme } from "@mui/material/styles";

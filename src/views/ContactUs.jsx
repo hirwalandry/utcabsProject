@@ -1,9 +1,6 @@
 import React from "react";
-import { alpha, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Avatar from "@mui/material/Avatar";
-import Grid from "@mui/material/Grid";
 import Container from "../components/container/Container";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";

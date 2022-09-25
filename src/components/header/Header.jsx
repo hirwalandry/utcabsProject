@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React  from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
@@ -7,33 +7,13 @@ import logo from "../../assets/img/logo138x75black.png";
 import { alpha, useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useStateContext } from "../../contexts/ContextProvider";
-import Typography from "@mui/material/Typography";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 import HeaderLinks from "./HeaderLinks";
 
 export function Header({ pages, onSidebarOpen, colorInvert = false }) {
   const theme = useTheme();
-  const { mode } = theme.palette;
-  const linkColor = colorInvert ? "common.white" : "text.primary";
-
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [openedPopoverId, setOpenedPopoverId] = useState(null);
-  const [activeLink, setActiveLink] = useState("");
-  const { openModal, setOpenModal, currentColor, setCurrentColor } =
+  const { setOpenModal, currentColor } =
     useStateContext();
-  const handleClick = (event, popoverId) => {
-    setAnchorEl(event.target);
-    setOpenedPopoverId(popoverId);
-  };
-  const hasActiveLink = () => pages.find((i) => i.href === activeLink);
-  const handleClose = () => {
-    setAnchorEl(null);
-    setOpenedPopoverId(null);
-  };
 
   // const [activeLink, setActiveLink] = useState("");
   // useEffect(() => {
@@ -64,7 +44,6 @@ export function Header({ pages, onSidebarOpen, colorInvert = false }) {
         <Box display={"flex"} justifyContent={"flex-end"} alignItems={"center"}>
           {pages.map((p, i) => (
             <HeaderLinks
-              fontWeight={hasActiveLink() ? 700 : 400}
               key={i}
               title={p.title}
               href={p.href}

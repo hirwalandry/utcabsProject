@@ -10,7 +10,6 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Container from "../components/container/Container";
-import { useStateContext } from "../contexts/ContextProvider";
 import taxCar1 from "../assets/img/taxCar2.jpg";
 import taxCar2 from "../assets/img/taxCar3.jpg";
 import exclussiveCar1 from "../assets/img/exclusiveCar1.jpg";
@@ -28,7 +27,6 @@ const dataSlider = [
     id: 2,
     image: taxCar2,
   },
-  ,
   {
     id: 3,
     image: exclussiveCar1,
@@ -71,8 +69,6 @@ function CustomerCare(props) {
   const isMd = useMediaQuery(theme.breakpoints.up("md"), {
     defaultMatches: true,
   });
-  const { slideIndex, setSlideIndex } = useStateContext();
-
   const [viewPortEntered, setViewPortEntered] = useState(false);
   const setViewPortVisibility = (isVisible) => {
     if (viewPortEntered) {
@@ -80,26 +76,6 @@ function CustomerCare(props) {
     }
 
     setViewPortEntered(isVisible);
-  };
-
-  const nextSlide = () => {
-    if (slideIndex !== dataSlider.length) {
-      setSlideIndex(slideIndex + 1);
-    } else if (slideIndex === dataSlider.length) {
-      setSlideIndex(1);
-    }
-  };
-
-  const prevSlide = () => {
-    if (slideIndex !== 1) {
-      setSlideIndex(slideIndex - 1);
-    } else if (slideIndex === 1) {
-      setSlideIndex(dataSlider.length);
-    }
-  };
-
-  const moveDot = (index) => {
-    setSlideIndex(index);
   };
   return (
     <Box

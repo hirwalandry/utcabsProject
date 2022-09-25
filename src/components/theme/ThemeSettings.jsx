@@ -2,14 +2,9 @@ import React, { useState } from "react";
 import {
   Box,
   Drawer,
-  Button,
   Typography,
   RadioGroup,
   FormControlLabel,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
   Radio,
   IconButton,
   Tooltip,
@@ -18,7 +13,6 @@ import DoneIcon from "@mui/icons-material/Done";
 import { themeColors } from "./WebTheme";
 import { useStateContext } from "../../contexts/ContextProvider";
 import FormController from "../common/FormController";
-import { alpha, useTheme } from "@mui/material/styles";
 
 const languages = [
   { id: "1", value: "United States" },

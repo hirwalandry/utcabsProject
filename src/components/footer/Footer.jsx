@@ -4,12 +4,9 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import { useTheme } from "@mui/material/styles";
 import logo from "../../assets/img/logo138x75black.png";
 
 function Footer(props) {
-    const theme = useTheme();
-    const { mode } = theme.palette;
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>

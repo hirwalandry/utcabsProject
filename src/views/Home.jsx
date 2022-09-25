@@ -6,87 +6,16 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { alpha, useTheme } from "@mui/material/styles";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import Typewriter from "typewriter-effect";
 import Container from "../components/container/Container";
 import { useStateContext } from "../contexts/ContextProvider";
-
-const images = [
-  {
-    group: [
-      {
-        cover:
-          "https://assets.maccarianagency.com/screenshots/the-front/img1.png",
-        coverDark:
-          "https://assets.maccarianagency.com/screenshots/the-front/img1--dark.png",
-      },
-      {
-        cover:
-          "https://assets.maccarianagency.com/screenshots/the-front/img4.png",
-        coverDark:
-          "https://assets.maccarianagency.com/screenshots/the-front/img4--dark.png",
-      },
-    ],
-  },
-  {
-    group: [
-      {
-        cover:
-          "https://assets.maccarianagency.com/screenshots/the-front/img13.png",
-        coverDark:
-          "https://assets.maccarianagency.com/screenshots/the-front/img13--dark.png",
-      },
-      {
-        cover:
-          "https://assets.maccarianagency.com/screenshots/the-front/img10.png",
-        coverDark:
-          "https://assets.maccarianagency.com/screenshots/the-front/img10--dark.png",
-      },
-      {
-        cover:
-          "https://assets.maccarianagency.com/screenshots/the-front/img7.png",
-        coverDark:
-          "https://assets.maccarianagency.com/screenshots/the-front/img7--dark.png",
-      },
-    ],
-  },
-  {
-    group: [
-      {
-        cover:
-          "https://assets.maccarianagency.com/screenshots/the-front/img6.png",
-        coverDark:
-          "https://assets.maccarianagency.com/screenshots/the-front/img6--dark.png",
-      },
-      {
-        cover:
-          "https://assets.maccarianagency.com/screenshots/the-front/img24.png",
-        coverDark:
-          "https://assets.maccarianagency.com/screenshots/the-front/img24--dark.png",
-      },
-      {
-        cover:
-          "https://assets.maccarianagency.com/screenshots/the-front/img17.png",
-        coverDark:
-          "https://assets.maccarianagency.com/screenshots/the-front/img17--dark.png",
-      },
-      {
-        cover:
-          "https://assets.maccarianagency.com/screenshots/the-front/img12.png",
-        coverDark:
-          "https://assets.maccarianagency.com/screenshots/the-front/img12--dark.png",
-      },
-    ],
-  },
-];
 
 function Home() {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up("md"), {
     defaultMatches: true,
   });
-  const { openModal, setOpenModal, mode, currentColor } = useStateContext();
+  const { setOpenModal, currentColor } = useStateContext();
   return (
     <Box
       sx={{
