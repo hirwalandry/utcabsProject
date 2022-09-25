@@ -75,9 +75,9 @@ function App() {
     //   <FirebaseProvider config={FirebaseConfig} appcat={AppCat}>
     //     <AuthLoading>
     <>
-      <Box position={"fixed"} left={20} bottom={20} style={{ zIndex: "1000" }}>
-        {/* <TooltipComponent content="Settings" position="Top"> */}
-        <Box
+      {/* <Box position={"fixed"} left={20} bottom={20} style={{ zIndex: "1000" }}> */}
+      {/* <TooltipComponent content="Settings" position="Top"> */}
+      {/* <Box
           justifyContent="center"
           alignItems="center"
           xs={12}
@@ -109,33 +109,11 @@ function App() {
             <SettingsIcon style={{ color: "white" }} />
           </IconButton>
         </Tooltip>
-      </Box>
-      {themeSettings && <ThemeSettings />}
+      </Box> */}
+      {/* {themeSettings && <ThemeSettings />} */}
 
-      <Router>
+      {/* <Router>
         <Routes history={hist}>
-          {/* <ProtectedRoute exact component={BookingHistory} path="/bookings" permit={"rider,admin,driver,fleetadmin"} />
-              <ProtectedRoute exact component={MyProfile} path="/profile" permit={"rider,admin,driver,fleetadmin"} />
-              <ProtectedRoute exact component={Dashboard} path="/dashboard" permit={"admin,fleetadmin"} />
-              <ProtectedRoute exact component={CarTypes} path="/cartypes" permit={"admin"} />
-              <ProtectedRoute exact component={CancellationReasons} path="/cancelreasons" permit={"admin"} />
-              <ProtectedRoute exact component={AddBookings} path="/addbookings" permit={"admin"} />
-              <ProtectedRoute exact component={Promos} path="/promos" permit={"admin"} />
-              <ProtectedRoute exact component={Riders} path="/riders" permit={"admin"} />
-              <ProtectedRoute exact component={Drivers} path="/drivers" permit={"admin,fleetadmin"} />
-              <ProtectedRoute exact component={CreateAdmin} path="/alladmin" permit={"admin"} />
-              <ProtectedRoute exact component={FleetAdmins} path="/fleetadmins" permit={"admin"} />
-              <ProtectedRoute exact component={DriverEarning} path="/driverearning" permit={"admin,fleetadmin"} />
-              <ProtectedRoute exact component={Notifications} path="/notifications" permit={"admin"} />
-              <ProtectedRoute exact component={Earningreports} path="/earningreports" permit={"admin"} />
-              <ProtectedRoute exact component={AddMoney} path="/addtowallet" permit={"admin"} />
-              <ProtectedRoute exact component={Withdraws} path="/withdraws" permit={"admin"} />
-              <ProtectedRoute exact component={Settings} path="/settings" permit={"admin"} />
-              <ProtectedRoute exact component={AppInformation} path="/appinfo" permit={"admin"} />
-              <ProtectedRoute exact component={LanguageSetting} path="/languagesetting" permit={"admin"} />     
-              <Route path="/contact-us" component={ContactUs} />                 
-              <Route path="/about-us" component={AboutUs} />
-              <Route path="/privacy-policy" component={PrivacyPolicy} />*/}
           <Route path="/" element={<MainComponent />}>
             <Route path="signin" element={<LoginPage />} />
             <Route path="addbookings" element={<AddBookings />} />
@@ -147,7 +125,8 @@ function App() {
             <Route path="/addbookings" element={<AddBookings />} />
           </Routes>
         ) : null}
-      </Router>
+      </Router> */}
+      <h1>Hello world</h1>
     </>
   );
 }
