@@ -4,7 +4,7 @@ import  Box  from '@mui/material/Box';
 
 function Input({ font, label, name, errors, ...rest }) {
   return (
-    <Box marginBottom={2} minWidth={400}>
+    <Box marginBottom={2}>
       <TextField {...rest} id={name} label={label} name={name} variant="standard" fullWidth/>
       {errors && <Box className="alert alert-warning">{errors}</Box>}
     </Box>
