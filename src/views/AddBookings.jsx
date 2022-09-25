@@ -96,7 +96,7 @@ function AddBookings(props) {
             }
           />
 
-          <Box style={{ display: "flex" }}>
+          <Box sx={{ display: "flex" }} >
             <FormController
               control="select"
               type="text"
@@ -106,7 +106,7 @@ function AddBookings(props) {
               onChange={formik.handleChange}
               value={formik.initialValues.verhicleType}
               className="form-control"
-              style={{ marginRight: "10px", width: "120px" }}
+              sx={{ marginRight: "10px", width: "98%"}}
               errors={
                 (formik.touched.email && formik.errors.email) ||
                 (formik.touched.email && errors.email)
@@ -121,17 +121,13 @@ function AddBookings(props) {
               onChange={formik.handleChange}
               value={formik.initialValues.bookNow}
               className="form-control"
-              style={{ width: "120px" }}
+              sx={{ width: "100%" }}
               errors={
                 (formik.touched.email && formik.errors.email) ||
                 (formik.touched.email && errors.email)
               }
             />
           </Box>
-          <FormControlLabel
-            control={<Checkbox name="checkedB" color="primary" />}
-            label="Remember me"
-          />
           <Button
             type="submit"
             color={currentColor}
@@ -140,6 +136,8 @@ function AddBookings(props) {
               color: "white",
               "&:hover": {
                 background: currentColor,
+                textTransform: "none",
+                marginTop: "2px",
               },
             }}
             variant="contained"

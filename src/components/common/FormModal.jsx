@@ -34,42 +34,43 @@ function FormModal({ title, link, children }) {
       sx={{
         margin: "0 auto",
         height: "75vh",
-        position: "absolute",
         padding: theme.spacing(2),
         top: theme.spacing(5),
       }}
     >
-      <DialogTitle>
-        <Box
-          display={"flex"}
-          justifyContent={"space-between"}
-          alignItems={"center"}
-        >
-          <Typography variant="h6" component="span" fontWeight={600}>
-            {title}
-          </Typography>
-          <Button
-            onClick={() => {
-              setOpenModal(false);
-              navigate(link);
-            }}
-            aria-label="Close"
-            variant={"outlined"}
-            sx={{
-              borderRadius: 2,
-              minWidth: "auto",
-              padding: 1,
-              margin: "2px",
-              borderColor: alpha(theme.palette.divider, 0.2),
-            }}
+      <div sx={{ width: "30%" }}>
+        <DialogTitle>
+          <Box
+            display={"flex"}
+            justifyContent={"space-between"}
+            alignItems={"center"}
           >
-            <CloseIcon />
-          </Button>
-        </Box>
-      </DialogTitle>
-      <DialogContent dividers onClick={(e) => e.stopPropagation()}>
-        {children}
-      </DialogContent>
+            <Typography variant="h6" component="span" fontWeight={600}>
+              {title}
+            </Typography>
+            <Button
+              onClick={() => {
+                setOpenModal(false);
+                navigate(link);
+              }}
+              aria-label="Close"
+              variant={"outlined"}
+              sx={{
+                borderRadius: 2,
+                minWidth: "auto",
+                padding: 1,
+                margin: "2px",
+                borderColor: alpha(theme.palette.divider, 0.2),
+              }}
+            >
+              <CloseIcon />
+            </Button>
+          </Box>
+        </DialogTitle>
+        <DialogContent dividers onClick={(e) => e.stopPropagation()}>
+          {children}
+        </DialogContent>
+      </div>
     </Dialog>
   );
 }
